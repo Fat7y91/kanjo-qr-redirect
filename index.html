@@ -1,63 +1,178 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanjo App - قريباً</title>
-    
-    <!-- كود إحصائيات جوجل (شغال وبيسجل الزيارات) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78PNF9KRN7"></script>
+    <meta name="theme-color" content="#2e0a5e">
+    <title>Download Kanjo App</title>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-78PNF9KRN7'); 
-    </script>
+        (function () {
+            var ua = navigator.userAgent || navigator.vendor || window.opera;
+            var isAndroid = /android/i.test(ua);
+            var isIOS = /iphone|ipad|ipod/i.test(ua) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-    <!-- تصميم صفحة الانتظار الثابتة -->
+            if (isAndroid) {
+                window.location.replace('https://play.google.com/store/apps/details?id=com.kanjo.user');
+            } else if (isIOS) {
+                window.location.replace('https://apps.apple.com/app/id6818633698');
+            }
+        })();
+    </script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
         body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 20px;
+            background: radial-gradient(circle at 50% 0%, #4a1285 0%, #2e0a5e 55%, #1d0640 100%);
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 20px;
         }
-        .logo {
-            max-width: 220px; /* تم تكبير اللوجو لإبراز التفاصيل */
-            margin-bottom: 25px;
+
+        .brand {
+            font-size: 34px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
-        .title-text {
-            color: #420099; /* لون كانجو البنفسجي المأخوذ من الصندوق والكاب */
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 15px;
+
+        .brand span {
+            color: #ffb703;
         }
-        .sub-text {
-            color: #555555;
-            font-size: 19px;
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(26px, 6vw, 34px);
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        p {
+            margin: 0 0 34px;
+            max-width: 340px;
+            font-size: 16px;
             line-height: 1.6;
-            max-width: 400px;
+            color: rgba(255, 255, 255, 0.78);
         }
-        .highlight {
-            color: #FF9900; /* لون كانجو البرتقالي المأخوذ من الكنغر والكوفية */
-            font-weight: bold;
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 22px;
+            border-radius: 999px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #241038;
+            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+        }
+
+        .btn-store {
+            background: #ffd60a;
+            box-shadow: 0 8px 24px rgba(255, 214, 10, 0.28);
+        }
+
+        .btn-play {
+            background: #ff8a00;
+            box-shadow: 0 8px 24px rgba(255, 138, 0, 0.3);
+        }
+
+        .btn:hover,
+        .btn:focus {
+            transform: translateY(-2px);
+            filter: brightness(1.04);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+            outline: none;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn svg {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            fill: currentColor;
+        }
+
+        .footer {
+            margin-top: 32px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        @media (min-width: 480px) {
+            .buttons {
+                flex-direction: row;
+                max-width: none;
+                justify-content: center;
+            }
+
+            .btn {
+                flex: 1 1 0;
+                min-width: 150px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- صورة اللوجو (تأكد إن اسم الصورة logo.png) -->
-    <img src="logo.png" alt="Kanjo Logo" class="logo" onerror="this.style.display='none'">
-    
-    <div class="title-text">تطبيق Kanjo قريباً جداً!</div>
-    <p class="sub-text">
-        نستعد حالياً لتغيير تجربة الطلب بالكامل.<br>
-        <span class="highlight">أسطول التوصيل الخاص بنا</span> يتجهز للانطلاق لخدمتكم في أسرع وقت.
-    </p>
+    <main class="card">
+        <div class="brand">Kan<span>jo</span></div>
+        <h1>Download Kanjo App</h1>
+        <p>Order faster, track your delivery, and enjoy exclusive offers right from your phone.</p>
+
+        <div class="buttons">
+            <a class="btn btn-store"
+               href="https://apps.apple.com/app/id6818633698"
+               aria-label="Download Kanjo on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M16.365 1.43c0 1.14-.417 2.2-1.25 3.03-.833.84-1.94 1.32-3.08 1.24-.05-1.13.44-2.2 1.22-3 .86-.9 2.05-1.42 3.11-1.27zM20.7 17.3c-.55 1.27-.82 1.84-1.54 2.96-1 1.55-2.4 3.48-4.14 3.5-1.55.02-1.95-.98-4.05-.97-2.1.01-2.54 1-4.09.98-1.74-.02-3.07-1.76-4.06-3.31-2.78-4.33-3.07-9.4-1.36-12.1 1.22-1.92 3.14-3.04 4.94-3.04 1.84 0 2.99 1 4.51 1 1.47 0 2.37-1 4.5-1 1.6 0 3.3.87 4.51 2.37-3.97 2.17-3.32 7.84.88 9.61z"/>
+                </svg>
+                App Store
+            </a>
+            <a class="btn btn-play"
+               href="https://play.google.com/store/apps/details?id=com.kanjo.user"
+               aria-label="Get Kanjo on Google Play">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3.6 1.8c-.36.37-.57.94-.57 1.68v17.04c0 .74.21 1.31.57 1.68l.09.09 9.55-9.55v-.22L3.69 1.71l-.09.09zm12.84 6.13L5.9 1.1a1.86 1.86 0 0 0-2.3.7l9.55 9.55 3.29-3.42zm0 8.14-3.29-3.42-9.55 9.55c.5.6 1.43.75 2.3.18l10.54-5.98v-.33zm.86-.49 3.2-1.82c.95-.54.95-1.42 0-1.96l-3.2-1.82-3.62 3.63 3.62 3.63v-.66z"/>
+                </svg>
+                Google Play
+            </a>
+        </div>
+
+        <div class="footer">Available on iOS and Android</div>
+    </main>
 </body>
 </html>
